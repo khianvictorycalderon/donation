@@ -1,0 +1,152 @@
+<!-- This HTML preset file was created by: Khian Victory D. Calderon -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Prevent browswer from storing local copy to always fetch up to date files -->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <!-- for mobile display -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="donate.png">
+
+    <title>Khian's Donation Page</title>
+    <style>
+      body {
+        background: rgb(41, 123, 250);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        font-family: Roboto, Verdana;
+      }
+      #content {
+        padding: 1%;
+        flex: 1;
+        text-align: center;
+      }
+      .images {
+        width: 30%;
+        height: auto;
+        border-radius:25px;
+        box-shadow:0px 0px 25px black;
+      }
+      a {
+        color:chartreuse;
+      }
+      .btn {
+        cursor:pointer;
+        background:white;
+        color: rgb(41, 123, 250);
+        padding: 1%;
+        text-decoration: none;
+        border-radius: 35px;
+        transition: 0.3s;
+      }
+      .btn:hover,
+      .btn:active {
+        filter: brightness(70%);
+      }
+      .t1 {
+        font-size: 3.5em;
+      }
+      .t2 {
+        font-size: 2.5em;
+      }
+      .t3 {
+        font-size: 1.5em;
+      }
+      .t4 {
+        font-size: 1em;
+      }
+      .left {
+        text-align:left;
+      }
+      #choose-method, #GCashOptions, #QRCode, #ExpressSend, #BankTransfer {
+        display:none;
+      }
+      @media (max-width: 768px) {
+        .images {
+          width: 90%;
+          height: auto;
+        }
+        .btn {
+          padding: 3%;
+        }
+      }
+    </style>
+    <script>
+        function hide(x) {
+            document.getElementById(x).style.display = "none";
+        }
+        function show(x) {
+            document.getElementById(x).style.display = "block";
+        }
+    </script>
+  </head>
+  <body>
+    <div id="content"><br><br>
+      <noscript>
+        <h1>PLEASE ENABLE JAVASCRIPT ON THIS WEBPAGE</h1>
+      </noscript>
+      <span class="t1">Thank you for your donation!</span><br><br><br>
+      <span class="t3">Any amount of donations goes to my personal funds to help me keep motivated doing productive things and is a big help for me. :)</span>
+      <br><br><br>
+      <span class="t4">Contact me for more details:</span>
+      <span class="t4"><a href="mailto:khianpublicmail@gmail.com">khianpublicmail@gmail.com</a></span>
+      <hr>
+      <br><br><br>
+      <span class="t3"><a id="donatebutton" onclick="hide('donatebutton'); show('choose-method')" class="btn">Donate to Khian</a></span>
+      <div id="choose-method">
+        <span class="t3">Choose donation method:</span><br><br>
+        <span class="t3"><a class="btn" onclick="hide('choose-method'); show('GCashOptions')">GCash</a></span>
+        <br><br><br>
+        <span class="t3"><a class="btn" href="https://www.paypal.com/paypalme/KhianVictory">Paypal</a></span>
+      </div>
+      <div id="GCashOptions">
+        <span class="t3">How would you like to send in GCash?</span><br><br>
+        <span class="t3"><a class="btn" onclick="hide('GCashOptions'); show('QRCode')">GCash Scan QR Code</a></span><br><br><br>
+        <span class="t3"><a class="btn" onclick="hide('GCashOptions'); show('ExpressSend')">GCash to GCash</a></span><br><br><br>
+        <span class="t3"><a class="btn" onclick="hide('GCashOptions'); show('BankTransfer')">Bank to GCash</a></span><br><br><br>
+        <span class="t3"><a onclick="hide('GCashOptions'); show('choose-method')" class="btn">Back</a></span>
+      </div>
+      <div id="QRCode">
+        <span class="t2">Scan to QR Code below:</span><br><br>
+        <img src="GCash.jpg" class="images">
+        <br><br><br>
+        <span class="t3"><a onclick="hide('QRCode'); show('GCashOptions')" class="btn">Back</a></span>
+      </div>
+      <div id="ExpressSend">
+        <div class="left">
+          <span class="t3">Steps:</span>
+        </div>
+        <ol class="t3 left">
+            <li>On your GCash homepage, tap Send</li>
+            <li>Select Express Send</li>
+            <li>Type <u>09938715214</u></li>
+            <li>Enter the amount you want to send</li>
+            <li>Tap Send</li>
+            <li>Done</li>
+        </ol>
+        <span class="t3"><a onclick="hide('ExpressSend'); show('GCashOptions')" class="btn">Back</a></span>
+      </div>
+      <div id="BankTransfer">
+        <div class="left">
+          <span class="t3">To send from any bank to GCash, follow the steps below:</span>
+        </div>
+        <ol class="t3 left">
+            <li>On your Bank App, tap transfer money or send money</li>
+            <li>Select Send to other bank</li>
+            <li>Select GCash</li>
+            <li>Type <u>09938715214</u> in Account Number</li>
+            <li>Enter the amount you want to send</li>
+            <li>Tap Send or Transfer Money (Additional charge may apply)</li>
+            <li>Done</li>
+        </ol>
+        <span class="t3"><a onclick="hide('BankTransfer'); show('GCashOptions')" class="btn">Back</a></span>
+      </div>
+    <br><br><br><br><br>
+    </div>
+  </body>
+</html>
